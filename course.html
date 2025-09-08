@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushan Course Video Library</title>
+    <link rel="icon" href="horse-head-with-messy-mane-side-view.png">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMXdFJ0V+2QFz1z2K3GdjBJAYe5WehZ1IZ1pX2" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #181818;
+            color: #fff;
+        }
+
+        header {
+            background-color: #202020;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #303030;
+            color: #fff;
+        }
+
+        .tabs {
+            overflow: hidden;
+            background-color: #202020;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .tablink {
+            background-color: #202020;
+            border: none;
+            color: #fff;
+            padding: 14px 20px;
+            cursor: pointer;
+            display: inline-block;
+            width: 33.33%;
+            text-align: center;
+            transition: background-color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .tablink:hover,
+        .tablink.active {
+            background-color: #333;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            animation: fadeEffect 1s;
+        }
+
+        .tabcontent.active {
+            display: block;
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .video-container {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #202020;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 0;
+        }
+
+        .social-links li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .social-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-links li a:hover {
+            color: #ccc;
+        }
+
+        .comment-section {
+            margin-top: 20px;
+            background-color: #303030;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #404040;
+            color: #fff;
+        }
+
+        .comment-form button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1c1e21;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .comment-form button:hover {
+            background-color: #333;
+        }
+
+        .comment {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .file-upload {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .file-upload label {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1c1e21;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .file-upload label:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .tablink {
+                width: 100%;
+                display: block;
+            }
+
+            .search-bar {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Rushan Course Video Library</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search for videos..." onkeyup="filterVideos()">
+        </div>
+
+        <section class="tabs">
+            <button class="tablink" onclick="openTab(event, 'python')">java</button>
+            <button class="tablink" onclick="openTab(event, 'java')">python</button>
+            <button class="tablink" onclick="openTab(event, 'htmlcss')">HTML & CSS</button>
+        </section>
+
+        <section id="python" class="tabcontent">
+            <div class="video-container">
+                <video controls>
+                    <source src="How to install Flutter on Windows 10_ 11 _ Amit Thinks.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <div class="comment-form">
+                    <textarea placeholder="Add a comment..."></textarea>
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+                <div class="comments">
+                    <!-- Comments will be added here dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="java" class="tabcontent">
+            <div class="video-container">
+                <video controls>
+                    <source src="1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-container">
+                <video controls>
+                    <source src="2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls>
+                    <source src="3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container"></div>
+                <video controls>
+                    <source src="4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container"></div>
+                <video controls>
+                    <source src="5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container"></div>
+               <video controls>
+                <source src="6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video>
+            </div>
+            <div class="video-container"></div>
+               <video controls>
+                <source src="7.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video>
+            </div>
+              
+             <div class="video-container"></div>
+               <video controls>
+                <source src="8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video>
+            </div>
+            <div class="video-container"></div>
+               <video controls>
+                <source src="9.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video>
+            </div>
+        
+            <div class="video-container">
+               <video controls>
+                <source src="10.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video>   
+            </div>  
+            <div class="video-container">
+               <video controls>
+                <source src="11list.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video>   
+            </div>
+                  
+            <div class="video-container">
+               <video controls>
+                <source src="12 dictionaries.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+                <div class="video-container">
+               <video controls>
+                <source src="13 sets.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+                <div class="video-container">
+               <video controls>
+                <source src="14 tuples.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>  
+             <div class="video-container">
+               <video controls>
+                <source src="15sclicing.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+                 <div class="video-container">
+               <video controls>
+                <source src="16summmary.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>  
+             <div class="video-container">
+               <video controls>
+                <source src="17 intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div> 
+             <div class="video-container">
+               <video controls>
+                <source src="18for loop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+             <div class="video-container">
+               <video controls>
+                <source src="19while loop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>  
+             <div class="video-container">
+               <video controls>
+                <source src="20 continue break.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div> 
+             <div class="video-container">
+               <video controls>
+                <source src="21 get min mac project.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+         <div class="video-container">
+               <video controls>
+                <source src="iteration data struct22.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+             <div class="video-container">
+               <video controls>
+                <source src="23 list compreshion.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+               </video> 
+            </div>   
+               
+               
+                
+                    
+                
+               
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <div class="comment-form">
+                    <textarea placeholder="Add a comment..."></textarea>
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+                <div class="comments">
+                    
+                    <!-- Comments will be added here dynamically -->
+
+                        
+                        <div class="comment">Good job</div>
+                        <div class="comment">Great video!</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="htmlcss" class="tabcontent">
+            <div class="video-container">
+                <video controls>
+                    <source src="module2-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <div class="comment-form">
+                    <textarea placeholder="Add a comment..."></textarea>
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+                <div class="comments">
+                    <!-- Comments will be added here dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <div class="file-upload">
+            <input type="file" id="fileUpload" multiple>
+            <label for="fileUpload">Upload Files</label>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2024 All rights reserved by Udemy Company</div>
+        <ul class="social-links">
+            <li><a href="https://www.instagram.com"><img src="icons8-instagram.gif" alt="Instagram"></a></li>
+            <li><a href="https://www.facebook.com"><img src="icons8-facebook-48.png" alt="Facebook"></a></li>
+            <li><a href="https://www.twitter.com"><img src="icons8-twitter.gif" alt="Twitter"></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        // Set default tab
+        document.querySelector('.tablink').click();
+
+        function filterVideos() {
+            var input, filter, videoContainers, video, i, txtValue;
+            input = document.getElementById('searchBar');
+            filter = input.value.toUpperCase();
+            videoContainers = document.getElementsByClassName('video-container');
+            for (i = 0; i < videoContainers.length; i++) {
+                video = videoContainers[i].getElementsByTagName("video")[0];
+                if (video) {
+                    txtValue = video.getAttribute('src');
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        videoContainers[i].style.display = "";
+                    } else {
+                        videoContainers[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        function addComment(button) {
+            var commentForm = button.parentElement;
+            var commentText = commentForm.querySelector('textarea').value;
+            if (commentText.trim() !== "") {
+                var comment = document.createElement('div');
+                comment.classList.add('comment');
+                comment.innerText = commentText;
+                var commentsContainer = commentForm.nextElementSibling;
+                commentsContainer.appendChild(comment);
+                commentForm.querySelector('textarea').value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

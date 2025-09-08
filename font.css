@@ -1,0 +1,62 @@
+
+@font-face {
+    font-family: Gotham SSm;
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+    src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Bold_Web.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: Gotham SSm;
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+    src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Medium_Web.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: Gotham SSm;
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Book_Web.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: Gotham SSm;
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+    src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Light_Web.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: Gotham SSm;
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+    src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-XLight_Web.woff2) format("woff2")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<video class="nuha" autoplay=""loop=""muted="">
+    <source 
+        src="https://media.istockphoto.com/id/1315388795/video/flying-through-emerging-digital-structures-blue-loopable-data-network-virtual-reality-quantum.mp4?s=mp4-640x640-is&k=20&c=YOcxqKZzmSRYHCTkzQgtAKAKGC6E1L5QWNB7ecOspnk="/>
+</video>
+</div>
