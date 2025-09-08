@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruhan Company Premium Unlimited</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="horse-head-with-messy-mane-side-view.png">
+  <link rel="stylesheet" href="font.css">
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ff9a9d77;
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .header {
+      font-size: 2rem;
+      color: #cd5264;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s;
+    }
+    .button-container {
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #ae646f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+      animation: fadeIn 1.5s;
+    }
+    .button a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #fad0c4;
+    }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: transparent;
+    }
+    .flex-item {
+      flex: 0 0 calc(33.33% - 20px);
+      margin: 10px;
+      background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      animation: fadeInUp 1.5s;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: hsla(0, 27%, 98%, 0.929);
+      color: #ae646f;
+      border-radius: 10px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+    .footer .area {
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+    }
+    .footer ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+    }
+    .footer ul li {
+      margin: 0 5px;
+    }
+    .footer ul li img {
+      width: 30px;
+      height: 30px;
+    }
+    .footer ul li img:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    /* Tab panel styles */
+    .tab-panel {
+      margin-top: 20px;
+      animation: fadeInUp 1.5s;
+      text-align: center;
+    }
+    .tab {
+      padding: 10px 20px;
+      background-color: #ae646f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    .mose {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      animation: fadeIn 1.5s;
+    }
+    /* Animation styles */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .flex-item {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+    @media (max-width: 480px) {
+      .flex-item {
+        flex: 0 0 calc(100% - 20px);
+      }
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer ul {
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .footer .area h2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">All in one Ruhan Programming Company</div>
+
+  <div class="button-container">
+    <button class="button"><a href="course.html">Start Programming</a></button>
+  </div>
+
+  <div class="flex-container">
+    <div class="flex-item">
+      <h2>Java</h2>
+      <p>Java is a popular programming language.</p>
+    </div>
+    <div class="flex-item">
+      <h2>Python</h2>
+      <p>Python is a high-level programming language.</p>
+    </div>
+    <div class="flex-item">
+      <h2>HTML</h2>
+      <p>HTML is a procedural programming language.</p>
+    </div>
+  </div>
+</div>
+
+<img src="OIG3-removebg-preview.png" class="mose"/>
+
+<div class="tab-panel">
+  <button class="tab">About</button>
+  <button class="tab">Courses</button>
+</div>
+
+<div class="footer">
+  <div class="area"><h2>&copy; 2024 Ruhan Company Premium Unlimited</h2></div>
+  <ul>
+    <li><a href="https://www.instagram.com"><img src="icons8-instagram.gif" alt="Instagram"></a></li>
+    <li><a href="https://www.facebook.com"><img src="icons8-facebook-48.png" alt="Facebook"></a></li>
+    <li><a href="https://www.twitter.com"><img src="icons8-twitter.gif" alt="Twitter"></a></li>
+  </ul>
+</div>
+
+</body>
+</html>
